@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Accutemp Field Reference</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f4f4f2;
+    color: #1a1a1a;
+  }
+  header {
+    background: #0c2d4d;
+    color: #fff;
+    padding: 14px 16px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  input[type="radio"] { display: none; }
+  .tabbar {
+    display: flex;
+    border-bottom: 1px solid #d8d8d4;
+    background: #fff;
+    position: sticky;
+    top: 0;
+  }
+  .tabbar label {
+    flex: 1;
+    text-align: center;
+    padding: 12px 4px;
+    font-size: 12px;
+    color: #555;
+    cursor: pointer;
+  }
+  .tabbar label .icon { display: block; font-size: 18px; margin-bottom: 2px; }
+  .pane { display: none; padding: 14px; }
+  #t1:checked ~ .content .p1,
+  #t2:checked ~ .content .p2,
+  #t3:checked ~ .content .p3,
+  #t4:checked ~ .content .p4 { display: block; }
+  #t1:checked ~ .tabbar label[for="t1"],
+  #t2:checked ~ .tabbar label[for="t2"],
+  #t3:checked ~ .tabbar label[for="t3"],
+  #t4:checked ~ .tabbar label[for="t4"] {
+    color: #0c2d4d;
+    border-bottom: 3px solid #0c2d4d;
+    font-weight: 600;
+  }
+  .card {
+    display: block;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid #e0e0dc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .accordion-body {
+    display: none;
+    padding: 10px 4px 2px;
+    font-size: 14px;
+    color: #444;
+  }
+  .accordion-body .item {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .accordion-body .item:last-child { border-bottom: none; }
+  input[type="checkbox"]:checked ~ .accordion-body { display: block; }
+  .placeholder {
+    font-size: 13px;
+    color: #999;
+    font-style: italic;
+    padding: 10px 0;
+  }
+</style>
+</head>
+<body>
+
+<header>Accutemp Field Reference</header>
+
+<input type="radio" name="maintab" id="t1" checked>
+<input type="radio" name="maintab" id="t2">
+<input type="radio" name="maintab" id="t3">
+<input type="radio" name="maintab" id="t4">
+
+<div class="tabbar">
+  <label for="t1"><span class="icon">&#128295;</span>Diagnostics</label>
+  <label for="t2"><span class="icon">&#9989;</span>Checklists</label>
+  <label for="t3"><span class="icon">&#128202;</span>Reference</label>
+  <label for="t4"><span class="icon">&#128203;</span>Tests</label>
+</div>
+
+<div class="content">
+
+  <!-- ============ DIAGNOSTICS ============ -->
+  <div class="pane p1">
+
+    <input type="checkbox" id="acc-vrf" style="display:none;">
+    <label for="acc-vrf" class="card">
+      <div class="card-header">VRF Systems <span>&#9660;</span></div>
+      <div class="accordion-body">
+        <div class="item">Combination ratio check — add content</div>
+        <div class="item">Refrigerant charge verification — add content</div>
+        <div class="item">Indoor unit types &amp; troubleshooting — add content</div>
+        <div class="item">Error code lookup — add content</div>
+      </div>
+    </label>
+
+    <input type="checkbox" id="acc-rtu" style="display:none;">
+    <label for="acc-rtu" class="card">
+      <div class="card-header">RTU / Package Units <span>&#9660;</span></div>
+      <div class="accordion-body">
+        <div class="placeholder">Add content here</div>
+      </div>
+    </label>
+
+    <input type="checkbox" id="acc-split" style="display:none;">
+    <label for="acc-split" class="card">
+      <div class="card-header">Split Systems &amp; Heat Pumps <span>&#9660;</span></div>
+      <div class="accordion-body">
+        <div class="placeholder">Add content here</div>
+      </div>
+    </label>
+
+    <input type="checkbox" id="acc-chiller" style="display:none;">
+    <label for="acc-chiller" class="card">
+      <div class="card-header">Chillers <span>&#9660;</span></div>
+      <div class="accordion-body">
+        <div class="placeholder">Add content here</div>
+      </div>
+    </label>
+
+    <input type="checkbox" id="acc-boiler" style="display:none;">
+    <label for="acc-boiler" class="card">
+      <div class="card-header">Boilers &amp; Hydronic Heating <span>&#9660;</span></div>
+      <div class="accordion-body">
+        <div class="placeholder">Add content here</div>
+      </div>
+    </label>
+
+    <input type="checkbox" id="acc-pumps" style="display:none;">
+    <label for="acc-pumps" class="card">
+      <div class="card-header">Pumps <span>&#9660;</span></div>
+      <div class="accordion-body">
+        <div class="placeholder">Add content here</div>
+      </div>
+    </label>
+
+    <input type="checkbox" id="acc-towers" style="display:none;">
+    <label for="acc-towers" class="card">
+      <div class="card-header">Cooling Towers <span>&#9660;</span></div>
+      <div class="accordion-body">
+        <div class="placeholder">Add content here</div>
+      </div>
+    </label>
+
+    <input type="checkbox" id="acc-terminal" style="display:none;">
+    <label for="acc-terminal" class="card">
+      <div class="card-header">Air Terminal Units — VAV / FPT <span>&#9660;</span></div>
+      <div class="accordion-body">
+        <div class="placeholder">Add content here</div>
+      </div>
+    </label>
+
+    <input type="checkbox" id="acc-unitheater" style="display:none;">
+    <label for="acc-unitheater" class="card">
+      <div class="card-header">Unit Heaters <span>&#9660;</span></div>
+      <div class="accordion-body">
+        <div class="placeholder">Add content here</div>
+      </div>
+    </label>
+
+    <input type="checkbox" id="acc-bas" style="display:none;">
+    <label for="acc-bas" class="card">
+      <div class="card-header">Controls &amp; BAS <span>&#9660;</span></div>
+      <div class="accordion-body">
+        <div class="placeholder">Add content here</div>
+      </div>
+    </label>
+
+  </div>
+
+  <!-- ============ CHECKLISTS ============ -->
+  <div class="pane p2">
+    <div class="card">PM Checklist by Equipment Type <div class="placeholder">Add content here</div></div>
+    <div class="card">Startup &amp; Commissioning <div class="placeholder">Add content here</div></div>
+    <div class="card">Service Call Documentation <div class="placeholder">Add content here</div></div>
+  </div>
+
+  <!-- ============ REFERENCE ============ -->
+  <div class="pane p3">
+    <div class="card">P-T Charts by Refrigerant <div class="placeholder">Add content here</div></div>
+    <div class="card">SH / SC Target Ranges <div class="placeholder">Add content here</div></div>
+    <div class="card">Wiring &amp; Electrical Reference <div class="placeholder">Add content here</div></div>
+  </div>
+
+  <!-- ============ TESTS ============ -->
+  <div class="pane p4">
+    <div class="placeholder">No knowledge tests added yet.</div>
+  </div>
+
+</div>
+
+</body>
+</html>
