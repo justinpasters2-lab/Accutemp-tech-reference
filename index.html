@@ -64,17 +64,22 @@
     background: #ffffff;
     color: #111111;
     border: 1px solid #c8c8c8;
+    border-left: 4px solid #14324f;
     border-radius: 8px;
     margin-bottom: 10px;
     font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
   }
   .card.sub {
     background: #e2e2e2;
     color: #111111;
     font-size: 14px;
+    font-weight: 400;
     padding: 11px 13px;
     margin-bottom: 6px;
+    margin-left: 10px;
+    border-left: 4px solid #b8b8b8;
   }
   .card-header {
     display: flex;
@@ -83,7 +88,10 @@
     gap: 8px;
     color: #111111;
   }
-  .card-header .arrow { color: #555555; font-size: 12px; flex: 0 0 auto; }
+  .card-header .arrow { color: #555555; font-size: 12px; flex: 0 0 auto; display: inline-block; transition: transform 0.15s ease; }
+  input.tgl:checked + label.card { background: #eef3f8; border-left-color: #14324f; }
+  input.tgl:checked + label.card.sub { background: #d7e2ea; border-left-color: #14324f; }
+  input.tgl:checked + label .card-header .arrow { transform: rotate(180deg); color: #14324f; }
   .accordion-body {
     display: none;
     padding: 4px 2px 14px;
